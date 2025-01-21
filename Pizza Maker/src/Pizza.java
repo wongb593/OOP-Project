@@ -1,21 +1,36 @@
 public class Pizza {
 
-    private int Calories;    
-    private int Deliciousness;
-    private double Price;     
-  
-    public Pizza(int vCalories, int vDeliciousness, double vPrice) {
-        Calories = vCalories;
-        Deliciousness = vDeliciousness;
-        Price = vPrice;
+    private String name;
+    private int calories;
+    private double price;
+
+        public Pizza(String name, int calories, double price) {
+            super();
+            this.name = name;
+            this.calories = calories;
+            this.price = price;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setString(String name) {
+            this.name = name;        }
+
+        public int getCalories() {
+            return calories;
+        }
+
+        public void setCalories(int calories) {
+            this.calories = calories;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public void setPrice(double price) {
+            this.price = price;
+        }
     }
-
-    public void printPizzaInfo() {
-        System.out.println("Calories: " + Calories);
-        System.out.println("Deliciousness:" + Deliciousness + "/300");
-        System.out.println("Price: " + Price);
-    }
-
-
-}
-  
