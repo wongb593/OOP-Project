@@ -1,0 +1,50 @@
+/*
+ * Represents a dessert that can be sold at a food truck
+ */
+public class Pizza {
+
+    private String pizza;    // The pizza of a dessert
+    private double price;     // The price of a dessert
+
+  
+    /*
+     * Sets pizza to "plain" and price to 0.50
+     */
+    public Pizza() {
+      this("cheese", 1.50);
+    }
+  
+    /*
+     * Sets pizza to the specified pizza and
+     * price to the specified price
+     */
+    public Pizza(String pizza, double price) {
+      this.pizza = pizza;
+      this.price = price;
+    }
+  
+    public String getPizza() {
+      return pizza;
+    }
+  
+    public double getPrice() {
+      return price;
+    }
+
+    public void setPrice(double newPrice) {
+      price = newPrice;
+    }
+  
+    public void setPizza(String newPizza) {
+      pizza = newPizza;
+    }
+
+    public String toString() {
+        return "pizza: " + pizza + "\n" + "Price: " + price + "\n";
+    }
+  
+    
+  
+  
+    
+  }
