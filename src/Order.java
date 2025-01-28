@@ -2,7 +2,7 @@ import java.util.Scanner; // Import the Scanner class
 
  class Order extends Pizza {
   public static void main(String[] args) {
-    int diameter, calories, price, sum;
+    int calories, price, sum;
     String name, pizza, crust;
     Scanner myObj = new Scanner(System.in); // Create a Scanner object
 
@@ -15,18 +15,15 @@ import java.util.Scanner; // Import the Scanner class
     System.out.println("Type your crust: ");
     crust = myObj.nextLine(); // Read user input
 
-    System.out.println("Type your diameter (Inches): ");
-    diameter = myObj.nextInt(); // Read user input
-
-   // sum = V + M + S + C;  // Calculate the Calories of Vegetables, Meat, Sauce, and Cheese
-   // System.out.println("Sum is: " + sum); // Print the sum
+   // System.out.println("Type your diameter (Inches): ");
+   // diameter = myObj.nextInt(); // Read user input
 
     sum = 0;
     calories = 0;
     price = 0;
 
    if (pizza=="Veggie") {
-    System.out.println(sum = calories + 1); //add cals for each item
+    System.out.println(sum = calories + 1); //add cals for each item next time
    }
 
    if (pizza=="Meatlover") {
@@ -54,6 +51,8 @@ import java.util.Scanner; // Import the Scanner class
     System.out.println(sum = calories + 3);
    }
 
+
+   
    System.out.println("Order for " + name + ", one " + pizza + " pizza (calories: " + calories + ")" );
 
 
