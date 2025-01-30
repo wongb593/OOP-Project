@@ -1,26 +1,58 @@
+public class Pizza {
+  
+    private String pizza; // The pizza name
+    private int calories; // The amount of calories
+    private double price; // The price of the pizza
+  
+    // Default constructor
+    public Pizza() {
+        this("Nothing", 0, 0.0); // Default price is set to 0.0
+    }
+  
+    /*
+     * Sets the pizza to the specified pizza 
+     * Sets the calories to the specified calories 
+     * Sets the price to the specified price
+     */
+    public Pizza(String pizza, int calories, double price) {
+        this.pizza = pizza;
+        this.calories = calories;
+        this.price = price;
+    }
 
- class Order extends Pizza {
-  public static void main(String[] args) {
+    // Returns the pizza name
+    public String getPizza() {
+        return pizza;
+    }
 
-    String pizza;
-    int calories;
+    // Returns the calories
+    public int getCalories() {
+        return calories;
+    }
 
-   if (pizza=="Veggie") {
-    System.out.println(calories += 100); 
-   }
+    // Returns the price
+    public double getPrice() {
+        return price;
+    }
 
-   if (pizza=="Meatlover") {
-    System.out.println(calories += 350);
-   } 
+    // Sets pizza to newPizza
+    public void setPizza(String newPizza) {
+        pizza = newPizza;
+    }
 
-   if (pizza=="Cheese") {
-    System.out.println(calories);
-   }
+    // Sets calories to newCalories
+    public void setCalories(int newCalories) {
+        calories = newCalories;
+    }
 
-   if (pizza=="Pepporonni") {
-    System.out.println(calories += 200);
-   }
+    // Sets price to newPrice
+    public void setPrice(double newPrice) {
+        price = newPrice;
+    }
 
-
-  }
-} 
+    // Overrides the pizza, calories, and price variables, and prints them into string
+    @Override 
+    public String toString() {
+        return "Pizza: " + pizza + "\nCalories: " + calories + "\nPrice: $" + price + "\n";
+    }
+}
