@@ -1,55 +1,52 @@
-/*
- * Represents a dessert that can be sold at a food truck
- */
-public class Pizza {
-
-    private String pizza;    // The pizza of a dessert
-    private double price;     // The price of a dessert
-    private int calories;
+public class Order extends Pizza {
   
-    /*
-     * Sets pizza to "cheese" and price to 12.50
+    /* 
+     * Constructor to initialize the pizza type
+     * Replaces the regular calories and price with the new variables given when case matches the user input
+     * It does it by passing pizza, calories, and price to the superclass
      */
-    public Pizza() {
-      this("cheese", 12.50, 1740);
+    public Order(String pizza) {
+        super(pizza, getCaloriesByCase(pizza), getPriceByCase(pizza));
     }
   
     /*
-     * Sets pizza to the specified pizza and
-     * price to the specified price
+     * Method to get the calories based on pizza name
+     * When case (user input) matches, it "switches" values
+     * Default is returned when no other cases match
      */
-    public Pizza(String pizza, double price, int calories) {
-      this.pizza = pizza;
-      this.price = price;
-      this.calories = calories;
-    }
-  
-    public String getPizza() {
-      return pizza;
-    }
-  
-    public double getPrice() {
-      return price;
-    }
-
-    public int getCalories() {
-      return calories;
+    private static int getCaloriesByCase(String pizza) { 
+        switch (pizza) {
+            case "Veggie":
+                return 2540; // Calories for Veggie
+            case "Meatlover":
+                return 3090; // Calories for Meatlover
+            case "Cheese":
+                return 2340; // Calories for Cheese
+            case "Pepperoni":
+                return 2870; // Calories for Pepperoni
+            default:
+                return 0; // If pizza inputted is not known, calories = 0
+        }
     }
 
-    public void setPrice(double newPrice) {
-      price = newPrice;
+    /*
+     * Method to get the price based on pizza name
+     */
+    private static double getPriceByCase(String pizza) { 
+        switch (pizza) {
+            case "Veggie":
+                return 10.50; // Price for Veggie
+            case "Meatlover":
+                return 17.00; // Price for Meatlover
+            case "Cheese":
+                return 9.50; // Price for Cheese
+            case "Pepperoni":
+                return 13.00; // Price for Pepperoni
+            default:
+                return 0.0; // If pizza inputted is not known, price = 0.0
+        }
     }
-  
-    public void setPizza(String newPizza) {
-      pizza = newPizza;
-    }
-
-    public void setCalories(int newCalories) {
-      calories = newCalories;
-    }
-
-    public String toString() {
-        return "pizza: " + pizza + "\n" + "Price: " + price + "\n" + "calories: " + calories + "\n";
+}
     }
     
 
