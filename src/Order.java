@@ -1,58 +1,49 @@
-public class Pizza {
+public class Order extends Pizza {
   
-    private String pizza; // The pizza name
-    private int calories; // The amount of calories
-    private double price; // The price of the pizza
-  
-    // Default constructor
-    public Pizza() {
-        this("Nothing", 0, 0.0); // Default price is set to 0.0
+    /* 
+     * Constructor to initialize the pizza type
+     * Replaces the regular calories and price with the new variables given when case matches the user input
+     * It does it by passing pizza, calories, and price to the superclass
+     */
+    public Order(String pizza) {
+        super(pizza, getCaloriesByCase(pizza), getPriceByCase(pizza));
     }
   
     /*
-     * Sets the pizza to the specified pizza 
-     * Sets the calories to the specified calories 
-     * Sets the price to the specified price
+     * Method to get the calories based on pizza name
+     * When case (user input) matches, it "switches" values
+     * Default is returned when no other cases match
      */
-    public Pizza(String pizza, int calories, double price) {
-        this.pizza = pizza;
-        this.calories = calories;
-        this.price = price;
+    private static int getCaloriesByCase(String pizza) { 
+        switch (pizza) {
+            case "Veggie":
+                return 2540; // Calories for Veggie
+            case "Meatlover":
+                return 3090; // Calories for Meatlover
+            case "Cheese":
+                return 2340; // Calories for Cheese
+            case "Pepperoni":
+                return 2870; // Calories for Pepperoni
+            default:
+                return 0; // If pizza inputted is not known, calories = 0
+        }
     }
 
-    // Returns the pizza name
-    public String getPizza() {
-        return pizza;
-    }
-
-    // Returns the calories
-    public int getCalories() {
-        return calories;
-    }
-
-    // Returns the price
-    public double getPrice() {
-        return price;
-    }
-
-    // Sets pizza to newPizza
-    public void setPizza(String newPizza) {
-        pizza = newPizza;
-    }
-
-    // Sets calories to newCalories
-    public void setCalories(int newCalories) {
-        calories = newCalories;
-    }
-
-    // Sets price to newPrice
-    public void setPrice(double newPrice) {
-        price = newPrice;
-    }
-
-    // Overrides the pizza, calories, and price variables, and prints them into string
-    @Override 
-    public String toString() {
-        return "Pizza: " + pizza + "\nCalories: " + calories + "\nPrice: $" + price + "\n";
+    /*
+     * Method to get the price based on pizza name
+     */
+    private static double getPriceByCase(String pizza) { 
+        switch (pizza) {
+            case "Veggie":
+                return 10.50; // Price for Veggie
+            case "Meatlover":
+                return 17.00; // Price for Meatlover
+            case "Cheese":
+                return 9.50; // Price for Cheese
+            case "Pepperoni":
+                return 13.00; // Price for Pepperoni
+            default:
+                return 0.0; // If pizza inputted is not known, price = 0.0
+        }
     }
 }
